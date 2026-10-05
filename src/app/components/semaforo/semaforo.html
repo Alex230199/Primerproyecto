@@ -1,13 +1,34 @@
-
-
-<div class="semaforo">
-        <div class="luz rojo"></div>
-        <div class="luz amarillo"></div>
-        <div class="luz verde"></div>
+<div style="display: flex; flex-direction: row; justify-content: center; gap: 1rem;">
+    @for (semaforo of [1, 2, 3, 4, 5]; track semaforo) {
+       <div class="semaforo">
+          <div class="luz rojo"
+              [style.background-color]="obtenerColorLuz('rojo')"
+              [style.border-color]="obtenerColorBordeLuz('rojo')"></div>
+          <div class="luz amarillo"
+              [style.background-color]="obtenerColorLuz('amarillo')"
+              [style.border-color]="obtenerColorBordeLuz('amarillo')"></div>
+          <div class="luz verde"
+              [style.background-color]="obtenerColorLuz('verde')"
+              [style.border-color]="obtenerColorBordeLuz('verde')"></div>
+       </div>
+    }
 </div>
-<h1>Contador: {{contador()}}</h1>
- <button class="incrementar" (click)="incrementar()">incrementar</button>
-<button class ="decrementar" (click)="decrementar()">decrementar</button>
-<button class="resetear" (click)="resetear()">resetear</button> 
-
-
+<div style="display: flex; flex-direction: row; justify-content: center; gap: 1rem; margin-top: 1rem;">
+ 
+    <h1 class="contador" [style.color]="obtenerColorContador()">
+        Contador: {{ contador() }}
+    </h1>
+ 
+    <button (click)="incrementar()" class="btn btn-primary">+1</button>
+    <button (click)="decrementar()" class="btn btn-warning">-1</button>
+    <button (click)="reset()" class="btn btn-danger">Reiniciar</button>
+ 
+<!--    @if (contador() > 0) {
+        <p [style.color]="obtenerColorContador()">Mayor que cero</p>
+    } @else if (contador() < 0) {
+        <p [style.color]="obtenerColorContador()">Menor que cero</p>
+    } @else {
+        <p [style.color]="obtenerColorContador()">Es igual a cero</p>
+    }
+-->
+</div>
