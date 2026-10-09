@@ -14,3 +14,8 @@ h1{
     align-items: center;
     display: flex;
 }
+
+.fruta{
+    width: 20px;
+    height: 20px;
+}
