@@ -2,7 +2,7 @@
 
 <div class = "container">
 <h2>Frutas</h2>
-<ul>
+<!--<ul>
     <li>manzana</li>
     <li>banana</li>
     <li>uva</li>
@@ -22,11 +22,15 @@
     <li>pimiento</li>
     <li>espinaca</li>   
 </ul>
-</div>
+</div>-->
 
 <ul>
-    @for (fruta of frutas; track fruta){
-    <li style="display: flex; flex-direction: row; justify-content: center; gap: 1rem;"> {{ fruta}} <li>
+    @for (fruta of frutas; track frutas){
+    <li style="display: flex; flex-direction: row; justify-content: center; gap: 1rem;"> {{ fruta.nombre}};
+        @if(fruta.like){
+            👌
+          } 
+         </li>
         }
         </ul>
         
