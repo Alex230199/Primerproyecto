@@ -1,0 +1,18 @@
+<h1> LISTA DE PERSONAJES</h1>
+
+<div class = "container">
+<h2>Personajes disponibles</h2>
+<ul>
+ @for (personaje of personajes; track personajes) {
+  <li style="display: flex; flex-direction: row; justify-content: center">
+    <img class="personaje" [src]="personaje.imagen">
+    {{ personaje.nombre }}
+    @if (personaje.like) {
+     👌
+    }
+  </li>
+}
+
+
+        </ul>
+      
