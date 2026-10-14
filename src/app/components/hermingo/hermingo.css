@@ -1,0 +1,139 @@
+.tarjeta { /* Aplica las reglas visuales al contenedor completo de la carta. */
+	position: relative; /* Permite posicionar el indicador inferior respecto a la tarjeta. */
+	display: flex; /* Organiza los elementos internos con Flexbox. */
+	flex-direction: column; /* Coloca los elementos internos uno debajo de otro. */
+	width: min(280px, calc(100vw - 32px)); /* Limita el ancho a 280px y deja margen en pantallas estrechas. */
+	height: 390px; /* Define la altura compacta cuando la descripción está oculta. */
+	box-sizing: border-box; /* Incluye borde y relleno dentro del ancho y alto declarados. */
+	padding: 16px 18px 50px; /* Separa el contenido de los bordes y reserva sitio para el indicador. */
+	overflow: hidden; /* Evita que el contenido sobresalga de las esquinas redondeadas. */
+	border: 2px solid #6a5139; /* Dibuja el borde marrón alrededor de la tarjeta. */
+	border-radius: 12px; /* Redondea las esquinas de la tarjeta. */
+	background-color: #d6c5a9; /* Establece el color base de aspecto pergamino. */
+	background-image: /* Añade capas decorativas sobre el color base. */
+		repeating-radial-gradient(ellipse at 50% 50%, transparent 0 18px, rgb(112 83 53 / 5%) 19px 21px, transparent 22px 34px), /* Dibuja un patrón circular tenue en el fondo. */
+		linear-gradient(135deg, rgb(255 255 255 / 28%), rgb(116 77 44 / 10%)); /* Añade un sombreado diagonal sutil al pergamino. */
+	box-shadow: 0 3px 8px rgb(0 0 0 / 28%); /* Da profundidad con una sombra exterior. */
+	color: #17130f; /* Define el color de texto predeterminado de la tarjeta. */
+	font-family: Arial, sans-serif; /* Define la tipografía del contenido de la tarjeta. */
+} /* Termina las reglas generales de la tarjeta. */
+
+.encabezado { /* Da estilo a la zona superior con el número y la identidad. */
+	display: flex; /* Alinea horizontalmente el número y el nombre. */
+	align-items: flex-start; /* Alinea ambos elementos por su borde superior. */
+	gap: 14px; /* Separa el número de la información del personaje. */
+	min-height: 58px; /* Reserva una altura mínima para el encabezado. */
+} /* Termina las reglas del encabezado. */
+
+.numero { /* Da estilo al círculo que contiene el número de la carta. */
+	display: grid; /* Permite centrar el número dentro del círculo. */
+	flex: 0 0 40px; /* Mantiene el círculo en 40px sin permitir que crezca o se encoja. */
+	height: 40px; /* Define la altura del círculo. */
+	place-items: center; /* Centra el número horizontal y verticalmente. */
+	border-radius: 50%; /* Convierte el contenedor en un círculo. */
+	background: #73777b; /* Colorea el círculo de gris. */
+	box-shadow: 0 2px 5px rgb(0 0 0 / 24%); /* Añade una sombra pequeña al círculo. */
+	color: #fff; /* Muestra el número en blanco. */
+	font-size: 14px; /* Define el tamaño del número. */
+	font-weight: 700; /* Muestra el número en negrita. */
+} /* Termina las reglas del círculo numérico. */
+
+.identidad h2 { /* Da estilo al nombre del personaje. */
+	margin: 0 0 2px; /* Elimina los márgenes superiores y deja poco espacio abajo. */
+	font-size: 20px; /* Define el tamaño del nombre. */
+	font-weight: 500; /* Usa un grosor de letra medio. */
+	line-height: 1.2; /* Controla la altura de línea del nombre. */
+} /* Termina las reglas del nombre. */
+
+.clase { /* Da estilo a la etiqueta que indica la clase del personaje. */
+	display: inline-block; /* Permite aplicar relleno y borde a la etiqueta. */
+	padding: 5px 10px; /* Añade espacio alrededor del texto de la clase. */
+	border-radius: 16px; /* Redondea la etiqueta. */
+	background: #a323b5; /* Colorea la etiqueta de morado. */
+	color: #fff; /* Muestra el texto de la etiqueta en blanco. */
+	font-size: 14px; /* Define el tamaño del texto de la clase. */
+	font-weight: 700; /* Muestra la clase en negrita. */
+} /* Termina las reglas de la etiqueta de clase. */
+
+.animal { /* Da tamaño y ajuste a la imagen del personaje. */
+	display: block; /* Hace que la imagen ocupe su propia línea. */
+	width: 100%; /* Permite que la imagen use todo el ancho interior disponible. */
+	height: 168px; /* Reserva espacio para la ilustración y permite que quepa la vista compacta. */
+	margin: 0 auto 2px; /* Centra la imagen y deja un pequeño margen inferior. */
+	object-fit: contain; /* Muestra la imagen completa sin deformarla ni recortarla. */
+	mix-blend-mode: multiply; /* Integra el fondo blanco de la imagen con el pergamino. */
+} /* Termina las reglas de la imagen. */
+
+.atributos { /* Organiza las cajas de ataque y defensa. */
+	display: flex; /* Coloca los atributos uno junto al otro. */
+	gap: 6px; /* Separa las dos cajas de atributos. */
+	margin: auto 8px 0; /* Centra el grupo y lo empuja hacia la parte inferior disponible. */
+} /* Termina las reglas del grupo de atributos. */
+
+.atributo { /* Da estilo común a cada caja de atributo. */
+	display: flex; /* Alinea el icono y el valor en una fila. */
+	flex: 1; /* Hace que ambas cajas compartan el espacio por igual. */
+	height: 44px; /* Fija la altura de cada caja. */
+	align-items: center; /* Centra verticalmente el icono y el valor. */
+	justify-content: center; /* Centra horizontalmente el contenido de la caja. */
+	gap: 8px; /* Separa el icono del valor numérico. */
+	border-radius: 16px; /* Redondea las esquinas de la caja. */
+	background: #3e50bd; /* Colorea de azul la caja de atributo. */
+	box-shadow: 0 2px 4px rgb(0 0 0 / 20%); /* Añade una sombra ligera debajo de la caja. */
+	color: #fff; /* Muestra el icono y el valor en blanco. */
+} /* Termina las reglas de cada caja de atributo. */
+
+.atributo span { /* Da estilo al icono de espada o escudo. */
+	font-size: 22px; /* Define el tamaño del icono. */
+	line-height: 1; /* Evita espacio vertical extra alrededor del icono. */
+} /* Termina las reglas de los iconos. */
+
+.atributo strong { /* Da estilo al valor numérico del atributo. */
+	font-size: 30px; /* Hace que el valor destaque dentro de la caja. */
+	line-height: 1; /* Evita que la altura de línea agrande la caja. */
+} /* Termina las reglas de los valores numéricos. */
+
+.equipar { /* Da estilo al botón de equipar, que todavía no tiene una acción asignada. */
+	display: block; /* Hace que el botón ocupe su propia línea. */
+	width: 100%; /* Extiende el botón por el ancho interior de la tarjeta. */
+	height: 36px; /* Define la altura del botón. */
+	margin-top: 12px; /* Separa el botón de las casillas de atributos. */
+	border: 0; /* Elimina el borde predeterminado del botón. */
+	border-radius: 3px; /* Redondea ligeramente las esquinas del botón. */
+	background: #3e50bd; /* Usa el mismo azul que las casillas de atributos. */
+	color: #fff; /* Muestra el texto del botón en blanco. */
+	font-size: 14px; /* Define el tamaño del texto del botón. */
+	font-weight: 700; /* Destaca el texto del botón en negrita. */
+	cursor: default; /* Mantiene el cursor normal porque el botón aún no ejecuta ninguna acción. */
+} /* Termina las reglas del botón de equipar. */
+
+.descripcion { /* Da estilo al texto descriptivo situado en la parte inferior. */
+	margin: 12px 0 0; /* Separa la descripción del botón y quita los márgenes laterales e inferior. */
+	text-align: center; /* Centra el texto dentro de la tarjeta. */
+	font-size: 15px; /* Define un tamaño legible para la descripción. */
+	line-height: 1.3; /* Añade espacio vertical entre las líneas del texto. */
+} /* Termina las reglas de la descripción. */
+
+.tarjeta.expandida { /* Aumenta el espacio de la tarjeta cuando se muestran los detalles. */
+	height: 510px; /* Deja sitio para la descripción desplegada. */
+} /* Termina las reglas de la tarjeta expandida. */
+
+.desplegable { /* Posiciona y da estilo al botón con la flecha de desplegar. */
+	position: absolute; /* Permite colocar el indicador con relación a la tarjeta. */
+	right: 18px; /* Separa el indicador 18px del borde derecho. */
+	bottom: 12px; /* Separa el indicador 12px del borde inferior. */
+	width: 30px; /* Define el ancho del área pulsable de la flecha. */
+	height: 30px; /* Define la altura del área pulsable de la flecha. */
+	padding: 0; /* Elimina el relleno predeterminado del botón. */
+	border: 0; /* Elimina el borde predeterminado del botón. */
+	background: transparent; /* Mantiene visible el fondo de la tarjeta tras la flecha. */
+	color: #635b50; /* Colorea el indicador de gris oscuro. */
+	font-size: 22px; /* Define el tamaño del indicador. */
+	line-height: 1; /* Mantiene compacto el espacio vertical del indicador. */
+	cursor: pointer; /* Indica que la flecha se puede pulsar. */
+	transition: transform 180ms ease; /* Anima la rotación de la flecha al abrir o cerrar. */
+} /* Termina las reglas del indicador inferior. */
+
+.desplegable[aria-expanded='true'] { /* Cambia la orientación de la flecha cuando los detalles están abiertos. */
+	transform: rotate(180deg); /* Gira la flecha hacia arriba para indicar que se puede cerrar. */
+} /* Termina las reglas de la flecha desplegada. */
