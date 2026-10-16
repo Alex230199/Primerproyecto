@@ -7,7 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   selector:'app-menu',
   templateUrl: './menu.html',
   styleUrl: './menu.css',
-  imports: [Component, MatToolbarModule, MatButtonModule],
+  imports: [ MatToolbarModule, MatButtonModule],
 })
 
 
