@@ -5,10 +5,12 @@ import { Calculadora } from './components/semaforo/calculadora/calculadora';
 import { Listas } from './components/listas/listas';
 import { Listapersonajes } from './components/listapersonajes/listapersonajes';
 import { Hermingo } from './components/hermingo/hermingo';
+import { Menu } from './components/menu/menu';
+
 
 
 @Component({
-  imports: [RouterOutlet, Semaforo, Calculadora, Listas, Listapersonajes, Hermingo],
+  imports: [RouterOutlet, Semaforo, Calculadora, Listas, Listapersonajes, Hermingo, Menu],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

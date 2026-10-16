@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 @Component({
-  imports: [],
-  selector: 'app-menu',
-  styleUrl: './menu.css',
+  selector:'app-menu',
   templateUrl: './menu.html',
+  styleUrl: './menu.css',
+  imports: [Component, MatToolbarModule, MatButtonModule],
 })
+
+
 export class Menu {}
+
+
