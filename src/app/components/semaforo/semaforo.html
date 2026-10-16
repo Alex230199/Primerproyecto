@@ -19,9 +19,9 @@
         Contador: {{ contador() }}
     </h1>
  
-    <button (click)="incrementar()" class="btn btn-primary">+1</button>
-    <button (click)="decrementar()" class="btn btn-warning">-1</button>
-    <button (click)="reset()" class="btn btn-danger">Reiniciar</button>
+    <button matButton="outlined" (click)="incrementar()" >+1</button>
+    <button matButton="filled" (click)="decrementar()" >-1</button>
+    <button  matButton="filled" (click)="reset()" >Reiniciar</button>
  
 <!--    @if (contador() > 0) {
         <p [style.color]="obtenerColorContador()">Mayor que cero</p>
