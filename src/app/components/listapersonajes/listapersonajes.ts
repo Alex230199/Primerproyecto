@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Listapersonajes {
 
-  personajes:Personaje[] = [new Personaje('Spider-man', true,'Primerproyecto-master/images/personajes/spiderman.jpg'),
-    new Personaje('Bond, James Bond', false, 'Primerproyecto-master/images/personajes/Jamesbond.jpg'),
-    new Personaje('link', true, 'Primerproyecto-master/images/personajes/link.jpg'),
-    new Personaje ('Mario', true, 'Primerproyecto-master/images/personajes/Mariobross.jpg'),
-    new Personaje('Batman', false, 'Primerproyecto-master/images/personajes/batman.jpg')
+  personajes:Personaje[] = [new Personaje('Spider-man', true,'/images/spiderman.jpg'),
+    new Personaje('Bond, James Bond', false, '/images/Jamesbond.jpg'),
+    new Personaje('link', true, '/images/link.jpg'),
+    new Personaje ('Mario', true, '/images/Mariobross.jpg'),
+    new Personaje('Batman', false, '/images/batman.jpg')
   ];
 }
 

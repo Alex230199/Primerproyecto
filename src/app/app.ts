@@ -10,7 +10,14 @@ import { Menu } from './components/menu/menu';
 
 
 @Component({
-  imports: [RouterOutlet, Semaforo, Calculadora, Listas, Listapersonajes, Hermingo, Menu],
+  imports: [
+    RouterOutlet,
+    Semaforo,
+    Calculadora,
+    Listas,
+    Listapersonajes,
+    Hermingo,
+     Menu],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
