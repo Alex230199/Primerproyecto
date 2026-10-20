@@ -5,6 +5,7 @@ import { Calculadora } from './components/semaforo/calculadora/calculadora';
 import { Listas } from './components/listas/listas';
 import { Listapersonajes } from './components/listapersonajes/listapersonajes';
 import { Hermingo } from './components/hermingo/hermingo';
+import { Formulariohalloween } from './components/formulariohalloween/formulariohalloween';
 import { Menu } from './components/menu/menu';
 
 
@@ -17,6 +18,7 @@ import { Menu } from './components/menu/menu';
     Listas,
     Listapersonajes,
     Hermingo,
+    Formulariohalloween,
      Menu],
   selector: 'app-root',
   styleUrl: './app.css',
