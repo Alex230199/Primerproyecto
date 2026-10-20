@@ -6,9 +6,26 @@
 	justify-content: center;
 }
 
+.contenedor-principal {
+	display: flex;
+	width: fit-content;
+	max-width: 100%;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 1rem;
+	border: 3px solid black;
+	border-radius: 14px;
+	box-sizing: border-box;
+}
+
 form {
 	display: flex;
 	flex-direction: column;
+	width: fit-content;
+	padding: 1rem;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 
 .boton-enviar {
