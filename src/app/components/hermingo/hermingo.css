@@ -1,3 +1,12 @@
+:host { /* Centra la tarjeta dentro del espacio de página que queda bajo el menú. */
+	display: flex; /* Permite alinear la tarjeta en ambos ejes. */
+	min-height: calc(100vh - 64px); /* Reserva el alto de la ventana menos la barra superior. */
+	box-sizing: border-box; /* Incluye el espacio interno dentro del alto reservado. */
+	align-items: center; /* Centra verticalmente la tarjeta. */
+	justify-content: center; /* Centra horizontalmente la tarjeta. */
+	padding: 24px 16px; /* Evita que la tarjeta toque los bordes en pantallas estrechas. */
+} /* Termina el centrado del contenido de Hermingo. */
+
 .tarjeta { /* Aplica las reglas visuales al contenedor completo de la carta. */
 	position: relative; /* Permite posicionar el indicador inferior respecto a la tarjeta. */
 	display: flex; /* Organiza los elementos internos con Flexbox. */
