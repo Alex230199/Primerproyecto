@@ -1,1 +1,29 @@
-<p>formulariohalloween works!</p>
+<!-- Muestra el título del formulario. -->
+<h1>Formulario de Halloween</h1>
+
+<!-- Conecta este formulario HTML con el formulario reactivo de TypeScript. -->
+<form [formGroup]="formulario" (ngSubmit)="agregarObjeto()">
+	<!-- Indica que el siguiente campo es para el nombre de la persona. -->
+	<label for="nombre">Nombre:</label>
+	<!-- Conecta este campo con el control llamado nombre. -->
+	<input id="nombre" type="text" formControlName="nombre">
+
+	<!-- Indica que el siguiente campo es para el objeto de Halloween. -->
+	<label for="objeto">Objeto:</label>
+	<!-- Conecta este campo con el control llamado objeto. -->
+	<input id="objeto" type="text" formControlName="objeto">
+
+	<!-- Envía el formulario cuando se pulsa el botón. -->
+	<button type="submit">Enviar</button>
+</form>
+
+<!-- Muestra el título de la lista acumulada. -->
+<h2>Lista de objetos de Halloween:</h2>
+<!-- Presenta los objetos como una lista numerada. -->
+<ol>
+	<!-- Recorre el array y usa la posición como identificador de cada elemento. -->
+	@for (objeto of objetos; track $index) {
+		<!-- Muestra el objeto actual del recorrido. -->
+		<li>{{ objeto }}</li>
+	}
+</ol>
