@@ -1,0 +1,60 @@
+/* Coloca la imagen y los datos uno al lado del otro. */
+.tarjeta-halloween {
+	display: flex;
+	width: 100%;
+	max-width: 36rem;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	border: 2px solid #3b214f;
+	border-radius: 12px;
+	background-color: #fff8e7;
+	box-sizing: border-box;
+	box-shadow: 0 3px 8px #00000020;
+}
+
+/* Da a la imagen un tamaño constante y evita que se deforme. */
+.tarjeta-halloween img {
+	width: 8rem;
+	height: 8rem;
+	flex-shrink: 0;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+/* Permite que los datos ocupen el espacio restante de la tarjeta. */
+.datos-objeto {
+	flex: 1;
+}
+
+/* Separa el nombre del resto de la información. */
+.datos-objeto h3 {
+	margin: 0 0 0.5rem;
+	color: #3b214f;
+}
+
+/* Separa los párrafos y mantiene legible la descripción. */
+.datos-objeto p {
+	margin: 0 0 0.75rem;
+}
+
+/* Destaca al propietario en la parte inferior de la tarjeta. */
+.propietario {
+	font-weight: 600;
+	color: #7b3f00;
+}
+
+/* Ajusta la tarjeta a pantallas estrechas. */
+@media (max-width: 30rem) {
+	/* Reduce el espacio interior de la tarjeta en móviles. */
+	.tarjeta-halloween {
+		gap: 0.75rem;
+		padding: 0.75rem;
+	}
+
+	/* Reduce la imagen para dejar más espacio a los datos. */
+	.tarjeta-halloween img {
+		width: 6rem;
+		height: 6rem;
+	}
+}

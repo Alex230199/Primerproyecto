@@ -1,0 +1,14 @@
+<!-- Agrupa la imagen y los datos del objeto en una tarjeta. -->
+<article class="tarjeta-halloween">
+	<!-- Muestra la imagen recibida e identifica su contenido con el texto alternativo. -->
+	<img [src]="objeto.imagen" [alt]="objeto.objeto">
+	<!-- Agrupa el nombre, la descripción y el propietario. -->
+	<div class="datos-objeto">
+		<!-- Muestra en negrita el nombre del objeto. -->
+		<h3>{{ objeto.objeto }}</h3>
+		<!-- Muestra la descripción del objeto. -->
+		<p>{{ objeto.descripcion }}</p>
+		<!-- Muestra el nombre del propietario en la parte inferior. -->
+		<p class="propietario">Propietario: {{ objeto.propietario }}</p>
+	</div>
+</article>

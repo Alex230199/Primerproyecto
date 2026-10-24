@@ -5,28 +5,33 @@
 
 <!-- Conecta este formulario HTML con el formulario reactivo de TypeScript. -->
 <form [formGroup]="formulario" (ngSubmit)="agregarObjeto()">
-	<!-- Indica que el siguiente campo es para el nombre de la persona. -->
-	<label for="nombre">Nombre:</label>
-	<!-- Conecta este campo con el control llamado nombre. -->
-	<input id="nombre" type="text" formControlName="nombre">
+	<!-- Indica que el siguiente campo contiene la URL de la imagen. -->
+	<label for="imagen">Imagen:</label>
+	<!-- Conecta el campo de imagen con su control del formulario reactivo. -->
+	<input id="imagen" type="text" formControlName="imagen" placeholder="/images/nombre.jpg">
 
 	<!-- Indica que el siguiente campo es para el objeto de Halloween. -->
 	<label for="objeto">Objeto:</label>
 	<!-- Conecta este campo con el control llamado objeto. -->
 	<input id="objeto" type="text" formControlName="objeto">
 
-	<!-- Envía el formulario cuando se pulsa el botón. -->
-	<button class="boton-enviar" type="submit">Enviar</button>
+	<!-- Indica que el siguiente campo contiene la descripción del objeto. -->
+	<label for="descripcion">Descripción:</label>
+	<!-- Conecta el campo de descripción con su control del formulario reactivo. -->
+	<textarea id="descripcion" formControlName="descripcion"></textarea>
+
+	<!-- Indica que el siguiente campo contiene el nombre del propietario. -->
+	<label for="propietario">Propietario:</label>
+	<!-- Conecta el campo del propietario con su control del formulario reactivo. -->
+	<input id="propietario" type="text" formControlName="propietario">
+
+	<!-- Envía el formulario y lo deshabilita mientras sus campos no sean válidos. -->
+	<button class="boton-enviar" type="submit" [disabled]="formulario.invalid">Enviar</button>
+	
 </form>
 
 <!-- Muestra el título de la lista acumulada. -->
 <h2>Lista de objetos de Halloween:</h2>
-<!-- Presenta los objetos como una lista numerada. -->
-<ol>
-	<!-- Recorre el array y usa la posición como identificador de cada elemento. -->
-	@for (objeto of objetos; track $index) {
-		<!-- Muestra el objeto actual del recorrido. -->
-		<li>{{ objeto }}</li>
-	}
-</ol>
+<!-- Recorre el array y crea una tarjeta hija para cada objeto de Halloween. -->
+<app-tarjeta-halloween *ngFor="let objeto of objetosHalloween" [objeto]="objeto"></app-tarjeta-halloween>
 </div>
