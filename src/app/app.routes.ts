@@ -6,6 +6,7 @@ import { Calculadora } from './components/semaforo/calculadora/calculadora';
 import { Listas } from './components/listas/listas';
 import { Menu } from './components/menu/menu';
 import{Formulariohalloween}from './components/formulariohalloween/formulariohalloween'; 
+import { Padre } from './components/padre/padre';
 
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: 'menu', component: Menu },
   { path: 'calculadora', component: Calculadora },
   { path: 'listas', component: Listas },
+  { path: 'Padre', component: Padre },
   {path: 'formulariohalloween', component: Formulariohalloween},
 
 ];
