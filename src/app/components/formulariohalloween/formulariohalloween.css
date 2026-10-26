@@ -54,6 +54,15 @@ label {
 	color: #f2a65a; /* Mantiene las etiquetas naranjas legibles sobre el fondo oscuro. */
 }
 
+small {
+	color: #fff8e7;
+}
+
+.error-imagen {
+	color: #b42318;
+	font-weight: 600;
+}
+
 input,
 textarea {
 	width: 100%; /* Hace que los campos ocupen el ancho del formulario. */

@@ -22,6 +22,12 @@
 	object-fit: cover;
 }
 
+.error-imagen {
+	max-width: 8rem;
+	color: #b42318;
+	font-size: 0.875rem;
+}
+
 /* Permite que los datos ocupen el espacio restante de la tarjeta. */
 .datos-objeto {
 	flex: 1;

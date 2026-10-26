@@ -1,7 +1,20 @@
 import { CommonModule } from '@angular/common'; // Importa las directivas comunes, incluido ngFor.
 import { Component } from '@angular/core'; // Importa el decorador para definir el componente.
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'; // Importa los controles, el formulario reactivo y las validaciones.
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms'; // Importa los controles, el formulario reactivo y las validaciones.
 import { ObjetoHalloween, TarjetaHalloweenComponent } from '../tarjetahalloween/tarjetahalloween'; // Importa el tipo del registro y la tarjeta hija.
+
+function validarImagen(control: AbstractControl): ValidationErrors | null {
+  const valor = String(control.value ?? '').trim();
+
+  if (valor.startsWith('/images/') && valor.length > '/images/'.length) return null;
+
+  try {
+    const url = new URL(valor);
+    return url.protocol === 'https:' && url.hostname ? null : { imagenInvalida: true };
+  } catch {
+    return { imagenInvalida: true };
+  }
+}
 
 @Component({ // Configura el componente de Angular.
   imports: [CommonModule, ReactiveFormsModule, TarjetaHalloweenComponent], // Permite usar ngFor, formularios reactivos y el componente de tarjeta.
@@ -13,7 +26,7 @@ export class Formulariohalloween { // Declara la clase del componente.
   formulario = new FormGroup({ // Crea el formulario y agrupa sus campos.
     imagen: new FormControl('', { // Crea el campo Imagen y empieza vacío.
       nonNullable: true, // Hace que el valor del campo siempre sea texto y no null.
-      validators: [Validators.required], // Exige que se indique la URL de una imagen.
+      validators: [Validators.required, validarImagen], // Acepta URL HTTPS o una ruta de public/images.
     }), // Termina la configuración del campo Imagen.
     objeto: new FormControl('', { // Crea el campo Objeto y empieza vacío.
       nonNullable: true, // Hace que el valor del campo siempre sea texto y no null.
@@ -33,7 +46,8 @@ export class Formulariohalloween { // Declara la clase del componente.
 
   agregarObjeto(): void { // Define la acción que se ejecuta al enviar el formulario.
     if (this.formulario.invalid) return; // Detiene el envío si los campos no son válidos.
-    this.objetosHalloween.push(this.formulario.getRawValue()); // Añade todos los datos del formulario al array.
+    const objeto = this.formulario.getRawValue(); // Obtiene los datos escritos en el formulario.
+    this.objetosHalloween.push({ ...objeto, imagen: objeto.imagen.trim() }); // Añade el objeto y limpia espacios de la ruta.
     this.formulario.reset(); // Limpia los campos para registrar otro objeto.
   } // Termina la acción de envío.
 } // Termina la clase del componente.

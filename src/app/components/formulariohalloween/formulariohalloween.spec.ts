@@ -18,4 +18,22 @@ describe('Formulariohalloween', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('accepts HTTPS image URLs and local public image paths', () => {
+    const imagen = component.formulario.controls.imagen;
+
+    imagen.setValue('https://example.com/imagen.jpg');
+    expect(imagen.valid).toBe(true);
+
+    imagen.setValue('/images/banana.jpg');
+    expect(imagen.valid).toBe(true);
+  });
+
+  it('rejects values that are not image URLs or local public paths', () => {
+    const imagen = component.formulario.controls.imagen;
+
+    imagen.setValue('C:\\Users\\alguien\\imagen.jpg');
+
+    expect(imagen.hasError('imagenInvalida')).toBe(true);
+  });
 });

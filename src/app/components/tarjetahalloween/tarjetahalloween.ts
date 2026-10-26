@@ -26,4 +26,6 @@ export interface ObjetoHalloween {
 export class TarjetaHalloweenComponent {
   // Recibe del componente padre los datos que se mostrarán.
   @Input() objeto!: ObjetoHalloween;
+
+  imagenNoDisponible = false;
 }

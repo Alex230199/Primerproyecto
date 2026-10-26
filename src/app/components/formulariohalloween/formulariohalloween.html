@@ -6,9 +6,13 @@
 <!-- Conecta este formulario HTML con el formulario reactivo de TypeScript. -->
 <form [formGroup]="formulario" (ngSubmit)="agregarObjeto()">
 	<!-- Indica que el siguiente campo contiene la URL de la imagen. -->
-	<label for="imagen">Imagen:</label>
+	<label for="imagen">Imagen (URL):</label>
 	<!-- Conecta el campo de imagen con su control del formulario reactivo. -->
-	<input id="imagen" type="text" formControlName="imagen" placeholder="/images/nombre.jpg">
+	<input id="imagen" type="text" formControlName="imagen" placeholder="https://ejemplo.com/imagen.jpg">
+	<small>También puedes usar una ruta local, como /images/banana.jpg.</small>
+	@if (formulario.controls.imagen.hasError('imagenInvalida') && formulario.controls.imagen.touched) {
+		<small class="error-imagen">Introduce una URL HTTPS o una ruta que empiece por /images/.</small>
+	}
 
 	<!-- Indica que el siguiente campo es para el objeto de Halloween. -->
 	<label for="objeto">Objeto:</label>
