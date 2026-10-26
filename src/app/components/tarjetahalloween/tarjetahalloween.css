@@ -45,20 +45,21 @@
 }
 
 .boton-eliminar {
-	padding: 0.5rem 0.75rem;
+	padding: 0;
 	border: 0;
-	border-radius: 6px;
-	background-color: #b42318;
-	color: #fff;
+	background: none;
+	color: inherit;
 	font: inherit;
 	font-weight: 600;
+	text-decoration: underline;
 	cursor: pointer;
 }
 
 .boton-eliminar:hover {
-	background-color: #8f1d14;
+	color: #b42318;
 }
 
+/*
 @media (max-width: 30rem) {
 	.tarjeta-halloween {
 		gap: 0.75rem;
@@ -70,3 +71,4 @@
 		height: 6rem;
 	}
 }
+*/
