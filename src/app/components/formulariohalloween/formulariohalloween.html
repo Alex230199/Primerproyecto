@@ -1,11 +1,17 @@
 <div class="contenedor-principal">
+
 <h1>Formulario de Halloween</h1>
 
 <form [formGroup]="formulario" (ngSubmit)="agregarObjeto()">
+
 	<label for="imagen">Imagen (URL):</label>
+
 	<input id="imagen" type="text" formControlName="imagen" placeholder="https://ejemplo.com/imagen.jpg">
+
 	<small>También puedes usar una ruta local, como /images/banana.jpg.</small>
+
 	@if (formulario.controls.imagen.hasError('imagenInvalida') && formulario.controls.imagen.touched) {
+
 		<small class="error-imagen">Introduce una URL HTTPS o una ruta que empiece por /images/.</small>
 	}
 
@@ -23,5 +29,7 @@
 </form>
 
 <h2>Lista de objetos de Halloween:</h2>
+
 <app-tarjeta-halloween *ngFor="let objeto of objetosHalloween" [objeto]="objeto" (eliminar)="eliminarObjeto($event)"></app-tarjeta-halloween>
+
 </div>

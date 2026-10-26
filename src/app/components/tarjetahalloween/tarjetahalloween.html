@@ -1,12 +1,22 @@
 <article class="tarjeta-halloween">
+
 	<img [src]="objeto.imagen" [alt]="objeto.objeto" (error)="imagenNoDisponible = true" [hidden]="imagenNoDisponible">
+
 	@if (imagenNoDisponible) {
+
 		<p class="error-imagen">No se pudo cargar la imagen. Comprueba que el enlace sea directo y público.</p>
 	}
+
 	<div class="datos-objeto">
+
 		<h3>{{ objeto.objeto }}</h3>
+
 		<p>{{ objeto.descripcion }}</p>
+
 		<p class="propietario">Propietario: {{ objeto.propietario }}</p>
+
 		<button class="boton-eliminar" type="button" (click)="Eliminacion()">Eliminar</button>
+
 	</div>
+	
 </article>

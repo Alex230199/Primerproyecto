@@ -8,11 +8,18 @@ export interface ObjetoHalloween {
 }
 
 @Component({
+
   selector: 'app-tarjeta-halloween',
+
   templateUrl: './tarjetahalloween.html',
+
   styleUrl: './tarjetahalloween.css',
-})
+
+}
+)
+
 export class TarjetaHalloweenComponent {
+
   @Input() objeto!: ObjetoHalloween;
 
   @Output() eliminar = new EventEmitter<ObjetoHalloween>();
@@ -20,6 +27,9 @@ export class TarjetaHalloweenComponent {
   imagenNoDisponible = false;
 
   Eliminacion(): void {
+
     this.eliminar.emit(this.objeto);
+
   }
+  
 }
