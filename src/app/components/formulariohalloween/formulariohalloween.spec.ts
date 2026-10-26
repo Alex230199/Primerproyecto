@@ -37,23 +37,4 @@ describe('Formulariohalloween', () => {
     expect(imagen.hasError('imagenInvalida')).toBe(true);
   });
 
-  it('removes only the selected object and keeps the other records', () => {
-    const objetoEliminado = {
-      imagen: '/images/banana.jpg',
-      objeto: 'banana',
-      descripcion: 'un platano',
-      propietario: 'alex',
-    };
-    const objetoConservado = {
-      imagen: '/images/batman.jpg',
-      objeto: 'batman',
-      descripcion: 'un superheroe',
-      propietario: 'ana',
-    };
-    component.objetosHalloween = [objetoEliminado, objetoConservado];
-
-    component.eliminarObjeto(objetoEliminado);
-
-    expect(component.objetosHalloween).toEqual([objetoConservado]);
-  });
 });

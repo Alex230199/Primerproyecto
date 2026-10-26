@@ -54,4 +54,4 @@ export class Formulariohalloween {
   eliminarObjeto(objetoAEliminar: ObjetoHalloween): void {
     this.objetosHalloween = this.objetosHalloween.filter((objeto) => objeto !== objetoAEliminar);
   }
-} // Termina la clase del componente.
+}
