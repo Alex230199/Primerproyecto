@@ -4,54 +4,54 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 1rem; /* Deja espacio entre el contenido y los bordes de la pantalla. */
-	box-sizing: border-box; /* Incluye el espacio interior dentro del tamaño del componente. */
-	background-color: #000; /* Pone negro el fondo detrás del contenido del formulario. */
+	padding: 1rem;
+	box-sizing: border-box;
+	background-color: #000;
 }
 
 .contenedor-principal {
 	display: flex;
-	width: 100%; /* Permite que el contenedor se adapte a pantallas estrechas. */
-	max-width: 32rem; /* Evita que el contenido se extienda demasiado en pantallas grandes. */
+	width: 100%;
+	max-width: 32rem;
 	flex-direction: column;
 	align-items: center;
 	gap: 0.75rem;
 	padding: 1rem;
-	border: 3px solid #3b214f; /* Usa un borde morado relacionado con Halloween. */
+	border: 3px solid #3b214f;
 	border-radius: 14px;
-	background-color: #fff8e7; /* Da al contenedor un fondo cálido y claro. */
+	background-color: #fff8e7;
 	box-sizing: border-box;
 }
 
 h1 {
-	color: #3b214f; /* Da al título un tono morado de Halloween. */
-	text-shadow: 2px 2px 0 #f2a65a; /* Añade un pequeño acento naranja al título. */
+	color: #3b214f;
+	text-shadow: 2px 2px 0 #f2a65a;
 }
 
 h1::before {
-	content: "🎃 "; /* Añade una calabaza decorativa antes del título. */
+	content: "🎃 ";
 }
 
 h1::after {
-	content: " 🦇"; /* Añade un murciélago decorativo después del título. */
+	content: " 🦇";
 }
 
 form {
 	display: flex;
 	flex-direction: column;
-	width: 100%; /* Ajusta el formulario al ancho disponible. */
-	max-width: 28rem; /* Mantiene cómodos de leer los campos del formulario. */
-	gap: 0.5rem; /* Separa los campos entre sí. */
+	width: 100%;
+	max-width: 28rem;
+	gap: 0.5rem;
 	padding: 1rem;
-	border: 1px solid #8e5ab5; /* Enmarca el formulario con un borde morado. */
+	border: 1px solid #8e5ab5;
 	border-radius: 10px;
-	background-color: #17121d; /* Da al formulario un fondo negro de tono suave. */
-	box-sizing: border-box; /* Evita que el relleno aumente el ancho del formulario. */
+	background-color: #17121d;
+	box-sizing: border-box;
 }
 
 label {
-	font-weight: 600; /* Destaca el nombre de cada campo. */
-	color: #f2a65a; /* Mantiene las etiquetas naranjas legibles sobre el fondo oscuro. */
+	font-weight: 600;
+	color: #f2a65a;
 }
 
 small {
@@ -65,37 +65,37 @@ small {
 
 input,
 textarea {
-	width: 100%; /* Hace que los campos ocupen el ancho del formulario. */
-	padding: 0.6rem; /* Deja espacio entre el texto y el borde del campo. */
-	border: 1px solid #8e5ab5; /* Define los campos con un borde morado. */
-	border-radius: 6px; /* Redondea ligeramente las esquinas de los campos. */
-	background-color: #fff8e7; /* Mantiene el texto de entrada legible. */
-	font: inherit; /* Mantiene la tipografía del resto del formulario. */
-	box-sizing: border-box; /* Incluye el relleno dentro del ancho del campo. */
+	width: 100%;
+	padding: 0.6rem;
+	border: 1px solid #8e5ab5;
+	border-radius: 6px;
+	background-color: #fff8e7;
+	font: inherit;
+	box-sizing: border-box;
 }
 
 textarea {
-	min-height: 6rem; /* Da espacio suficiente para escribir la descripción. */
-	resize: vertical; /* Permite cambiar la altura de la descripción. */
+	min-height: 6rem;
+	resize: vertical;
 }
 
 .boton-enviar {
 	margin-top: 1rem;
-	padding: 0.65rem 1rem; /* Aumenta el área cómoda para pulsar el botón. */
-	border: 0; /* Quita el borde predeterminado del botón. */
-	border-radius: 6px; /* Redondea las esquinas del botón. */
-	background-color: #e87519; /* Resalta el botón con un color cálido. */
-	color: white; /* Mantiene el texto legible sobre el fondo del botón. */
-	font: inherit; /* Usa la misma tipografía que el formulario. */
-	font-weight: 700; /* Destaca el texto del botón. */
-	cursor: pointer; /* Indica que el botón se puede pulsar. */
+	padding: 0.65rem 1rem;
+	border: 0;
+	border-radius: 6px;
+	background-color: #e87519;
+	color: white;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
 }
 
 .boton-enviar:disabled {
-	background-color: #9a8aa6; /* Atenúa el botón mientras el formulario no sea válido. */
-	cursor: not-allowed; /* Indica que el botón está deshabilitado. */
+	background-color: #9a8aa6;
+	cursor: not-allowed;
 }
 
 .boton-enviar:not(:disabled):hover {
-	background-color: #c45112; /* Oscurece el botón activo al pasar el puntero. */
+	background-color: #c45112;
 }

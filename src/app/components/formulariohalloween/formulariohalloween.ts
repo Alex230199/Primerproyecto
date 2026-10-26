@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common'; // Importa las directivas comunes, incluido ngFor.
-import { Component } from '@angular/core'; // Importa el decorador para definir el componente.
-import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms'; // Importa los controles, el formulario reactivo y las validaciones.
-import { ObjetoHalloween, TarjetaHalloweenComponent } from '../tarjetahalloween/tarjetahalloween'; // Importa el tipo del registro y la tarjeta hija.
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { ObjetoHalloween, TarjetaHalloweenComponent } from '../tarjetahalloween/tarjetahalloween';
 
 function validarImagen(control: AbstractControl): ValidationErrors | null {
   const valor = String(control.value ?? '').trim();
@@ -16,38 +16,42 @@ function validarImagen(control: AbstractControl): ValidationErrors | null {
   }
 }
 
-@Component({ // Configura el componente de Angular.
-  imports: [CommonModule, ReactiveFormsModule, TarjetaHalloweenComponent], // Permite usar ngFor, formularios reactivos y el componente de tarjeta.
-  selector: 'app-formulariohalloween', // Define el nombre de la etiqueta HTML del componente.
-  styleUrl: './formulariohalloween.css', // Indica el archivo de estilos del componente.
-  templateUrl: './formulariohalloween.html', // Indica el archivo HTML del componente.
-}) // Termina la configuración del componente.
-export class Formulariohalloween { // Declara la clase del componente.
-  formulario = new FormGroup({ // Crea el formulario y agrupa sus campos.
-    imagen: new FormControl('', { // Crea el campo Imagen y empieza vacío.
-      nonNullable: true, // Hace que el valor del campo siempre sea texto y no null.
-      validators: [Validators.required, validarImagen], // Acepta URL HTTPS o una ruta de public/images.
-    }), // Termina la configuración del campo Imagen.
-    objeto: new FormControl('', { // Crea el campo Objeto y empieza vacío.
-      nonNullable: true, // Hace que el valor del campo siempre sea texto y no null.
-      validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], // Exige entre 3 y 50 caracteres.
-    }), // Termina la configuración del campo Objeto.
-    descripcion: new FormControl('', { // Crea el campo Descripción y empieza vacío.
-      nonNullable: true, // Hace que el valor del campo siempre sea texto y no null.
-      validators: [Validators.required, Validators.minLength(10)], // Exige una descripción de al menos 10 caracteres.
-    }), // Termina la configuración del campo Descripción.
-    propietario: new FormControl('', { // Crea el campo Propietario y empieza vacío.
-      nonNullable: true, // Hace que el valor del campo siempre sea texto y no null.
-      validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)], // Exige entre 3 y 50 caracteres.
-    }), // Termina la configuración del campo Propietario.
-  }); // Termina la creación del formulario.
+@Component({
+  imports: [CommonModule, ReactiveFormsModule, TarjetaHalloweenComponent],
+  selector: 'app-formulariohalloween',
+  styleUrl: './formulariohalloween.css',
+  templateUrl: './formulariohalloween.html',
+})
+export class Formulariohalloween {
+  formulario = new FormGroup({
+    imagen: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, validarImagen],
+    }),
+    objeto: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)],
+    }),
+    descripcion: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.minLength(10)],
+    }),
+    propietario: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.minLength(3), Validators.maxLength(50)],
+    }),
+  });
 
-  objetosHalloween: ObjetoHalloween[] = []; // Guarda todos los objetos de Halloween registrados.
+  objetosHalloween: ObjetoHalloween[] = [];
 
-  agregarObjeto(): void { // Define la acción que se ejecuta al enviar el formulario.
-    if (this.formulario.invalid) return; // Detiene el envío si los campos no son válidos.
-    const objeto = this.formulario.getRawValue(); // Obtiene los datos escritos en el formulario.
-    this.objetosHalloween.push({ ...objeto, imagen: objeto.imagen.trim() }); // Añade el objeto y limpia espacios de la ruta.
-    this.formulario.reset(); // Limpia los campos para registrar otro objeto.
-  } // Termina la acción de envío.
+  agregarObjeto(): void {
+    if (this.formulario.invalid) return;
+    const objeto = this.formulario.getRawValue();
+    this.objetosHalloween.push({ ...objeto, imagen: objeto.imagen.trim() });
+    this.formulario.reset();
+  }
+
+  eliminarObjeto(objetoAEliminar: ObjetoHalloween): void {
+    this.objetosHalloween = this.objetosHalloween.filter((objeto) => objeto !== objetoAEliminar);
+  }
 } // Termina la clase del componente.
