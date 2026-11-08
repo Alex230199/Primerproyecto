@@ -14,7 +14,7 @@ mat-toolbar a {
   font-size: 16px;          /* ajusta el tamaño de la fuente */
 }
 
-mat-toolabr button {
+mat-toolbar button {
   margin-left: 16px;
   padding:6 px 12 px;
   border: 1;
