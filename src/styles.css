@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --fondo: #ffffff;
+  --texto: #222222;
+  --superficie: #f2f2f2;
+  --barra: #386074;
+  --texto-barra: #ffffff;
+  --boton: #ffffff;
+  --texto-boton: #222222;
+}
+
+:root.modo-oscuro {
+  --fondo: #1e1e1e;
+  --texto: #f2f2f2;
+  --superficie: #2d2d2d;
+  --barra: #171717;
+  --texto-barra: #ffffff;
+  --boton: #3a3a3a;
+  --texto-boton: #ffffff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--fondo);
+  color: var(--texto);
+}

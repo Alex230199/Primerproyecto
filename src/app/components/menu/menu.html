@@ -9,6 +9,9 @@
   <a routerLink="/hermingo"> Hermingo </a>
   <a routerLink ="/Padre"> Padre </a>
   <a routerLink="/formulariohalloween">Formulario Halloween</a>
+  <button mat-button type="button" (click)="temaService.cambiarTema()">
+    {{ temaService.modoOscuro() ? 'claro' : 'oscuro' }}
+  </button>
 
  <!-- <a routerLink="/home" mat-button>Home</a>
   <a [routerLink]="['Semaforo']" mat-button>Semáforo</a>

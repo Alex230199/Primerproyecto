@@ -3,6 +3,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { Semaforo } from '../semaforo/semaforo';
+import {TemaService} from '../../services/tema';
+
 
 @Component({
   selector:'app-menu',
@@ -12,6 +14,8 @@ import { Semaforo } from '../semaforo/semaforo';
 })
 
 
-export class Menu {}
+export class Menu {
+  constructor(public temaService: TemaService) {}
+}
 
 

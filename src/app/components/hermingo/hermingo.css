@@ -27,6 +27,11 @@
 	font-family: Arial, sans-serif; /* Define la tipografía del contenido de la tarjeta. */
 } /* Termina las reglas generales de la tarjeta. */
 
+.tarjeta { /*esto es lo que hace que el cambio de claro a oscuro se aplique en esta tarjeta*/
+  background-color: var(--superficie);
+  color: var(--texto);
+}
+
 .encabezado { /* Da estilo a la zona superior con el número y la identidad. */
 	display: flex; /* Alinea horizontalmente el número y el nombre. */
 	align-items: flex-start; /* Alinea ambos elementos por su borde superior. */
