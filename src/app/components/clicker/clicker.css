@@ -1,0 +1,39 @@
+.contenedor.principal{
+
+    	display: flex;
+	width: 100%;
+	max-width: 32rem;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 1rem;
+	border: 3px solid #3b214f;
+	border-radius: 14px;
+	background-color: #fff8e7;
+	box-sizing: border-box;
+    margin: 0 auto;
+    width: min(100% - 2rem, 740px);
+    
+}
+
+img{
+    size:10px;
+}
+
+.clicable img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.clicable {
+  width: 176px;
+  height: 176px;
+  padding: 0.85rem;
+  border: 2px solid black;
+  border-radius: 14px;
+  background: lab(72.01% -26.3 16.78);
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 160ms ease;
+}
