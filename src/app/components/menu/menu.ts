@@ -3,8 +3,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { Semaforo } from '../semaforo/semaforo';
-import { Clicker } from '../clicker/clicker';
-
+import {TemaService} from '../../services/tema';
 
 
 @Component({
@@ -15,6 +14,8 @@ import { Clicker } from '../clicker/clicker';
 })
 
 
-export class Menu {}
+export class Menu {
+  constructor(public temaService: TemaService) {}
+}
 
 

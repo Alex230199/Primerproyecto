@@ -25,6 +25,11 @@
   text-align: center; /* Centra el título sobre la calculadora. */
 }
 
+.tarjeta { /*esto es lo que hace que el cambio de claro a oscuro se aplique en esta tarjeta*/
+  background-color: var(--superficie);
+  color: var(--texto);
+}
+
 .pantalla { /* Convierte el área superior en una pantalla de lectura. */
   box-sizing: border-box; /* Mantiene el ancho de pantalla dentro de la tarjeta. */
   display: flex; /* Permite alinear el resultado dentro de la pantalla. */

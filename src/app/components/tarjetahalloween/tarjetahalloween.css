@@ -20,6 +20,11 @@
 	object-fit: cover;
 }
 
+.tarjeta { /*esto es lo que hace que el cambio de claro a oscuro se aplique en esta tarjeta*/
+  background-color: var(--superficie);
+  color: var(--texto);
+}
+
 .error-imagen {
 	max-width: 8rem;
 	color: #b42318;

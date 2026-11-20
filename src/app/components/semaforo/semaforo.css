@@ -17,6 +17,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
 }
 
+.tarjeta { /*esto es lo que hace que el cambio de claro a oscuro se aplique en esta tarjeta*/
+  background-color: var(--superficie);
+  color: var(--texto);
+}
+
 .rojo {
     width: 60px;
     height: 60px;
