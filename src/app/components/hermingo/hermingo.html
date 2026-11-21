@@ -1,27 +1,27 @@
-<article class="tarjeta" [class.expandida]="detallesAbiertos" aria-label="Carta de Hermingo"> <!-- Crea la tarjeta y cambia su tamaño según el estado del desplegable. -->
-	<header class="encabezado"> <!-- Agrupa la identificación que aparece en la parte superior. -->
-		<span class="numero">#{{ numero }}</span> <!-- Muestra el número del personaje obtenido del componente. -->
-		<div class="identidad"> <!-- Agrupa el nombre y la clase del personaje. -->
-			<h2>{{ nombre }}</h2> <!-- Muestra el nombre del personaje como encabezado. -->
-			<span class="clase">{{ clase }}</span> <!-- Muestra la clase del personaje en una etiqueta. -->
-		</div> <!-- Cierra el grupo de identidad. -->
-	</header> <!-- Cierra el encabezado de la tarjeta. -->
+<article class="tarjeta" [class.expandida]="detallesAbiertos" aria-label="Carta de Hermingo"> 
+	<header class="encabezado"> 
+		<span class="numero">#{{ numero }}</span> 
+		<div class="identidad"> 
+			<h2>{{ nombre }}</h2> 
+			<span class="clase">{{ clase }}</span> 
+		</div> 
+	</header> 
 
-	<img class="animal" [src]="imagen" [alt]="nombre" /> <!-- Carga la imagen del personaje y define su texto alternativo. -->
+	<img class="animal" [src]="imagen" [alt]="nombre" /> 
 
-	<div class="atributos" aria-label="Atributos"> <!-- Agrupa los valores de ataque y defensa. -->
-		<div class="atributo" [attr.aria-label]="'Ataque: ' + ataque"> <!-- Presenta el atributo de ataque con un nombre accesible dinámico. -->
-			<span aria-hidden="true">🗡️</span> <!-- Muestra la espada y la oculta a lectores de pantalla para evitar repetir información. -->
-			<strong>{{ ataque }}</strong> <!-- Muestra el valor de ataque definido en el componente. -->
-		</div> <!-- Cierra el atributo de ataque. -->
-		<div class="atributo" [attr.aria-label]="'Defensa: ' + defensa"> <!-- Presenta el atributo de defensa con un nombre accesible dinámico. -->
-			<span aria-hidden="true">🛡️</span> <!-- Muestra el escudo y lo oculta a lectores de pantalla para evitar repetir información. -->
-			<strong>{{ defensa }}</strong> <!-- Muestra el valor de defensa definido en el componente. -->
-		</div> <!-- Cierra el atributo de defensa. -->
-	</div> <!-- Cierra el grupo de atributos. -->
+	<div class="atributos" aria-label="Atributos"> 
+		<div class="atributo" [attr.aria-label]="'Ataque: ' + ataque"> 
+			<span aria-hidden="true">🗡️</span> 
+			<strong>{{ ataque }}</strong> 
+		</div> 
+		<div class="atributo" [attr.aria-label]="'Defensa: ' + defensa"> 
+			<span aria-hidden="true">🛡️</span> 
+			<strong>{{ defensa }}</strong> 
+		</div> 
+	</div> 
 
-	<button class="equipar" type="button">EQUIPAR</button> <!-- Muestra el botón de equipar sin asignarle ninguna acción. -->
-	<p id="descripcion-hermingo" class="descripcion" [hidden]="!detallesAbiertos">Perdido en sus ojos: Hermingo bloquea la capacidad del catalejo para espiar al jugador usuario.</p> <!-- Muestra la descripción solo cuando se despliega la tarjeta. -->
+	<button class="equipar" type="button">EQUIPAR</button> 
+	<p id="descripcion-hermingo" class="descripcion" [hidden]="!detallesAbiertos">Perdido en sus ojos: Hermingo bloquea la capacidad del catalejo para espiar al jugador usuario.</p> 
 
-	<button class="desplegable" type="button" [attr.aria-expanded]="detallesAbiertos" [attr.aria-label]="detallesAbiertos ? 'Ocultar detalles de Hermingo' : 'Mostrar detalles de Hermingo'" aria-controls="descripcion-hermingo" (click)="alternarDetalles()">⌄</button> <!-- Permite abrir o cerrar los detalles con la flecha. -->
-</article> <!-- Cierra la tarjeta de Hermingo. -->
+	<button class="desplegable" type="button" [attr.aria-expanded]="detallesAbiertos" [attr.aria-label]="detallesAbiertos ? 'Ocultar detalles de Hermingo' : 'Mostrar detalles de Hermingo'" aria-controls="descripcion-hermingo" (click)="alternarDetalles()">⌄</button> 
+</article> 

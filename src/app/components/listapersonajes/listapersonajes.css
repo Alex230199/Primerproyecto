@@ -14,7 +14,7 @@ h2{
     align-items: center;
 }
 
-.tarjeta { /*esto es lo que hace que el cambio de claro a oscuro se aplique en esta tarjeta*/
+.tarjeta { 
   background-color: var(--superficie);
   color: var(--texto);
 }

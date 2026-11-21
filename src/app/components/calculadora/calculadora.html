@@ -1,35 +1,35 @@
-<main class="calculadora"> <!-- Agrupa el contenido visual de la calculadora. -->
-  <h1>Calculadora</h1> <!-- Muestra el título de la calculadora. -->
-  <section class="pantalla" aria-label="Resultado"> <!-- Reserva la pantalla rectangular para mostrar el resultado. -->
-    <output class="resultado" aria-live="polite">{{ resultado }}</output> <!-- Muestra el resultado actualizado y anuncia los cambios accesibles. -->
-  </section> <!-- Cierra la pantalla del resultado. -->
-  <section class="operandos" aria-label="Números de la operación"> <!-- Agrupa los campos donde se escribirán los dos números. -->
-    <label for="primer-numero">Primer número</label> <!-- Identifica el campo del primer número. -->
-    <input id="primer-numero" name="primerNumero" type="number" step="any" [value]="primerNumero" (focus)="seleccionarCampo('primerNumero')" (input)="actualizarNumero('primerNumero', $event)" aria-label="Primer número" /> <!-- Permite escribir el primer número y mantenerlo sincronizado con el componente. -->
-    <label for="segundo-numero">Segundo número</label> <!-- Identifica el campo del segundo número. -->
-    <input id="segundo-numero" name="segundoNumero" type="number" step="any" [value]="segundoNumero" (focus)="seleccionarCampo('segundoNumero')" (input)="actualizarNumero('segundoNumero', $event)" aria-label="Segundo número" /> <!-- Permite escribir el segundo número y mantenerlo sincronizado con el componente. -->
-  </section> <!-- Cierra los campos de los operandos. -->
-  <section class="controles" aria-label="Controles de la calculadora"> <!-- Reúne el teclado numérico y las operaciones. -->
-    <div class="botones" aria-label="Números"> <!-- Contiene los botones numéricos y el separador decimal. -->
-      <button type="button" (click)="agregarnumero('7')">7</button> <!-- Añade el número siete al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('8')">8</button> <!-- Añade el número ocho al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('9')">9</button> <!-- Añade el número nueve al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('4')">4</button> <!-- Añade el número cuatro al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('5')">5</button> <!-- Añade el número cinco al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('6')">6</button> <!-- Añade el número seis al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('1')">1</button> <!-- Añade el número uno al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('2')">2</button> <!-- Añade el número dos al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('3')">3</button> <!-- Añade el número tres al campo seleccionado. -->
-      <button type="button" (click)="borrar()">C</button> <!-- Restablece los números, el resultado y la operación. -->
-      <button type="button" (click)="agregarnumero('0')">0</button> <!-- Añade el número cero al campo seleccionado. -->
-      <button type="button" (click)="agregarnumero('.')">.</button> <!-- Añade un separador decimal al campo seleccionado. -->
-    </div> <!-- Cierra el teclado numérico. -->
-    <div class="operaciones" aria-label="Operaciones"> <!-- Contiene las operaciones en una columna lateral. -->
-      <button type="button" (click)="seleccionarOperacion('+')" aria-label="Sumar">+</button> <!-- Selecciona la suma. -->
-      <button type="button" (click)="seleccionarOperacion('-')" aria-label="Restar">−</button> <!-- Selecciona la resta. -->
-      <button type="button" (click)="seleccionarOperacion('*')" aria-label="Multiplicar">×</button> <!-- Selecciona la multiplicación. -->
-      <button type="button" (click)="seleccionarOperacion('/')" aria-label="Dividir">÷</button> <!-- Selecciona la división. -->
-      <button type="button" (click)="calcular()" aria-label="Calcular resultado">=</button> <!-- Calcula y muestra el resultado de la operación. -->
-    </div> <!-- Cierra la columna de operaciones. -->
-  </section> <!-- Cierra los controles de la calculadora. -->
-</main> <!-- Cierra el contenido de la calculadora. -->
+<main class="calculadora"> 
+  <h1>Calculadora</h1> 
+  <section class="pantalla" aria-label="Resultado"> 
+    <output class="resultado" aria-live="polite">{{ resultado }}</output> 
+  </section> 
+  <section class="operandos" aria-label="Números de la operación"> 
+    <label for="primer-numero">Primer número</label> 
+    <input id="primer-numero" name="primerNumero" type="number" step="any" [value]="primerNumero" (focus)="seleccionarCampo('primerNumero')" (input)="actualizarNumero('primerNumero', $event)" aria-label="Primer número" /> 
+    <label for="segundo-numero">Segundo número</label> 
+    <input id="segundo-numero" name="segundoNumero" type="number" step="any" [value]="segundoNumero" (focus)="seleccionarCampo('segundoNumero')" (input)="actualizarNumero('segundoNumero', $event)" aria-label="Segundo número" /> 
+  </section> 
+  <section class="controles" aria-label="Controles de la calculadora"> 
+    <div class="botones" aria-label="Números"> 
+      <button type="button" (click)="agregarnumero('7')">7</button> 
+      <button type="button" (click)="agregarnumero('8')">8</button> 
+      <button type="button" (click)="agregarnumero('9')">9</button> 
+      <button type="button" (click)="agregarnumero('4')">4</button> 
+      <button type="button" (click)="agregarnumero('5')">5</button> 
+      <button type="button" (click)="agregarnumero('6')">6</button> 
+      <button type="button" (click)="agregarnumero('1')">1</button> 
+      <button type="button" (click)="agregarnumero('2')">2</button> 
+      <button type="button" (click)="agregarnumero('3')">3</button> 
+      <button type="button" (click)="borrar()">C</button> 
+      <button type="button" (click)="agregarnumero('0')">0</button> 
+      <button type="button" (click)="agregarnumero('.')">.</button> 
+    </div> 
+    <div class="operaciones" aria-label="Operaciones"> 
+      <button type="button" (click)="seleccionarOperacion('+')" aria-label="Sumar">+</button> 
+      <button type="button" (click)="seleccionarOperacion('-')" aria-label="Restar">−</button> 
+      <button type="button" (click)="seleccionarOperacion('*')" aria-label="Multiplicar">×</button> 
+      <button type="button" (click)="seleccionarOperacion('/')" aria-label="Dividir">÷</button> 
+      <button type="button" (click)="calcular()" aria-label="Calcular resultado">=</button> 
+    </div> 
+  </section> 
+</main> 

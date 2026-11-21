@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class Listas {
 
-  //nombre_frutas:string[] = ['Manzana','Banana','Cereza','Dátil','Elderberry'];
+  
   
   frutas:Fruta[] = [new Fruta('Manzana', false,"/images/manzana.jpg"),new Fruta('Banana', true,"/images/banana.jpg"),
     new Fruta('Cereza',false,"/images/cerezas.jpg"),new Fruta('Dátil',true,"/images/dátil.jpg"),new Fruta('Elderberry',false,"/images/elderberry.jpg")];

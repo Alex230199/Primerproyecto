@@ -1,177 +1,177 @@
-:host { /* Define el estilo local del componente sin afectar otras pantallas. */
-  display: block; /* Permite que la calculadora ocupe su propio bloque en la página. */
-  padding: 32px 16px; /* Separa la calculadora de los bordes de la ventana. */
-  font-family: Arial, Helvetica, sans-serif; /* Usa una tipografía sencilla y legible. */
+:host { 
+  display: block; 
+  padding: 32px 16px; 
+  font-family: Arial, Helvetica, sans-serif; 
 }
 
-.calculadora { /* Diseña la calculadora como una tarjeta compacta y centrada. */
-  box-sizing: border-box; /* Incluye borde y relleno dentro del ancho indicado. */
-  display: flex; /* Apila el título, la pantalla y los controles. */
-  flex-direction: column; /* Organiza el contenido verticalmente. */
-  gap: 20px; /* Mantiene una separación uniforme entre las secciones. */
-  width: min(100%, 440px); /* Limita el ancho sin desbordarse en pantallas pequeñas. */
-  margin: 0 auto; /* Centra la tarjeta horizontalmente. */
-  padding: 28px; /* Deja espacio interior alrededor de los controles. */
-  border: 1px solid #dbe2ea; /* Delimita la tarjeta con un borde discreto. */
-  border-radius: 24px; /* Suaviza las esquinas de la tarjeta. */
-  background: #17212b; /* Da a la tarjeta un fondo oscuro. */
-  box-shadow: 0 18px 45px rgb(23 33 43 / 18%); /* Añade profundidad sin recargar el diseño. */
+.calculadora { 
+  box-sizing: border-box; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  width: min(100%, 440px); 
+  margin: 0 auto; 
+  padding: 28px; 
+  border: 1px solid #dbe2ea; 
+  border-radius: 24px; 
+  background: #17212b; 
+  box-shadow: 0 18px 45px rgb(23 33 43 / 18%); 
 }
 
-.calculadora h1 { /* Da jerarquía visual al título de la calculadora. */
-  margin: 0; /* Evita márgenes por defecto alrededor del título. */
-  color: #f7f9fc; /* Mantiene el título legible sobre el fondo oscuro. */
-  font-size: 28px; /* Da al título un tamaño claro y proporcionado. */
-  text-align: center; /* Centra el título sobre la calculadora. */
+.calculadora h1 { 
+  margin: 0; 
+  color: #f7f9fc; 
+  font-size: 28px; 
+  text-align: center; 
 }
 
-.tarjeta { /*esto es lo que hace que el cambio de claro a oscuro se aplique en esta tarjeta*/
+.tarjeta { 
   background-color: var(--superficie);
   color: var(--texto);
 }
 
-.pantalla { /* Convierte el área superior en una pantalla de lectura. */
-  box-sizing: border-box; /* Mantiene el ancho de pantalla dentro de la tarjeta. */
-  display: flex; /* Permite alinear el resultado dentro de la pantalla. */
-  align-items: center; /* Centra verticalmente el resultado. */
-  justify-content: flex-end; /* Alinea el resultado al borde derecho. */
-  min-height: 92px; /* Da espacio suficiente para leer el valor. */
-  padding: 18px; /* Separa el resultado de los bordes de la pantalla. */
-  overflow: hidden; /* Evita que resultados largos salgan de la pantalla. */
-  border: 1px solid #53616e; /* Define el contorno de la pantalla. */
-  border-radius: 14px; /* Redondea las esquinas de la pantalla. */
-  background: #f3f7fa; /* Contrasta la pantalla con la tarjeta oscura. */
+.pantalla { 
+  box-sizing: border-box; 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end; 
+  min-height: 92px; 
+  padding: 18px; 
+  overflow: hidden; 
+  border: 1px solid #53616e; 
+  border-radius: 14px; 
+  background: #f3f7fa; 
 }
 
-.resultado { /* Resalta el valor que aparece en la pantalla. */
-  color: #17212b; /* Usa texto oscuro para mantener buen contraste. */
-  font-size: clamp(24px, 7vw, 36px); /* Ajusta el tamaño al espacio disponible. */
-  font-weight: 700; /* Hace que el resultado destaque. */
-  overflow-wrap: anywhere; /* Permite mostrar mensajes o valores largos sin desbordar. */
-  text-align: right; /* Alinea los dígitos como en una calculadora convencional. */
+.resultado { 
+  color: #17212b; 
+  font-size: clamp(24px, 7vw, 36px); 
+  font-weight: 700; 
+  overflow-wrap: anywhere; 
+  text-align: right; 
 }
 
-.operandos { /* Alinea los dos campos de números en columnas. */
-  display: grid; /* Permite colocar cada etiqueta sobre su campo. */
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* Crea dos columnas iguales y adaptables. */
-  gap: 8px 14px; /* Separa las etiquetas de los campos y las columnas entre sí. */
+.operandos { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 8px 14px; 
 }
 
-.operandos label { /* Da estilo consistente a los nombres de los campos. */
-  color: #d5dee7; /* Mantiene las etiquetas visibles sobre la tarjeta oscura. */
-  font-size: 14px; /* Hace que las etiquetas sean legibles sin competir con el resultado. */
-  font-weight: 600; /* Distingue las etiquetas del resto del texto. */
+.operandos label { 
+  color: #d5dee7; 
+  font-size: 14px; 
+  font-weight: 600; 
 }
 
-.operandos label:nth-of-type(1) { /* Coloca la primera etiqueta sobre su campo. */
-  grid-column: 1; /* Sitúa la etiqueta en la primera columna. */
-  grid-row: 1; /* Sitúa la etiqueta en la fila superior. */
+.operandos label:nth-of-type(1) { 
+  grid-column: 1; 
+  grid-row: 1; 
 }
 
-.operandos label:nth-of-type(2) { /* Coloca la segunda etiqueta sobre su campo. */
-  grid-column: 2; /* Sitúa la etiqueta en la segunda columna. */
-  grid-row: 1; /* Sitúa la etiqueta en la fila superior. */
+.operandos label:nth-of-type(2) { 
+  grid-column: 2; 
+  grid-row: 1; 
 }
 
-.operandos input:nth-of-type(1) { /* Da estilo y posición al campo del primer número. */
-  grid-column: 1; /* Sitúa el campo en la primera columna. */
-  grid-row: 2; /* Sitúa el campo debajo de su etiqueta. */
+.operandos input:nth-of-type(1) { 
+  grid-column: 1; 
+  grid-row: 2; 
 }
 
-.operandos input:nth-of-type(2) { /* Da estilo y posición al campo del segundo número. */
-  grid-column: 2; /* Sitúa el campo en la segunda columna. */
-  grid-row: 2; /* Sitúa el campo debajo de su etiqueta. */
+.operandos input:nth-of-type(2) { 
+  grid-column: 2; 
+  grid-row: 2; 
 }
 
-.operandos input { /* Facilita la lectura y edición de los dos números. */
-  box-sizing: border-box; /* Evita que el relleno aumente el ancho del campo. */
-  width: 100%; /* Hace que el campo ocupe su columna. */
-  min-width: 0; /* Permite que las columnas se adapten a móviles estrechos. */
-  padding: 11px 12px; /* Da espacio cómodo para escribir. */
-  border: 1px solid #677785; /* Dibuja un borde visible alrededor del campo. */
-  border-radius: 10px; /* Suaviza las esquinas del campo. */
-  background: #fff; /* Mantiene el área de escritura clara. */
-  color: #17212b; /* Hace que el número escrito sea fácil de leer. */
-  font: inherit; /* Conserva la tipografía de la calculadora. */
-  font-size: 16px; /* Evita texto pequeño en los campos, especialmente en móvil. */
+.operandos input { 
+  box-sizing: border-box; 
+  width: 100%; 
+  min-width: 0; 
+  padding: 11px 12px; 
+  border: 1px solid #677785; 
+  border-radius: 10px; 
+  background: #fff; 
+  color: #17212b; 
+  font: inherit; 
+  font-size: 16px; 
 }
 
-.operandos input:focus { /* Señala claramente cuál campo está activo. */
-  outline: 3px solid #72d6ad; /* Resalta el campo activo con el color de acento. */
-  outline-offset: 2px; /* Separa el resaltado del borde del campo. */
+.operandos input:focus { 
+  outline: 3px solid #72d6ad; 
+  outline-offset: 2px; 
 }
 
-.controles { /* Sitúa el teclado numérico junto a las operaciones. */
-  display: grid; /* Divide los controles en teclado y columna de operaciones. */
-  grid-template-columns: minmax(0, 1fr) 64px; /* Reserva una columna compacta para las operaciones. */
-  gap: 12px; /* Separa el teclado de las operaciones. */
+.controles { 
+  display: grid; 
+  grid-template-columns: minmax(0, 1fr) 64px; 
+  gap: 12px; 
 }
 
-.botones { /* Ordena los números en una cuadrícula de tres columnas. */
-  display: grid; /* Alinea los botones numéricos en filas regulares. */
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Crea tres columnas iguales para el teclado. */
-  gap: 9px; /* Deja separación entre los botones numéricos. */
+.botones { 
+  display: grid; 
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  gap: 9px; 
 }
 
-.operaciones { /* Apila las operaciones en una columna lateral. */
-  display: grid; /* Organiza las operaciones verticalmente. */
-  grid-template-rows: repeat(5, 1fr); /* Da espacio equivalente a las cuatro operaciones y al igual. */
-  gap: 9px; /* Separa los botones de operación. */
+.operaciones { 
+  display: grid; 
+  grid-template-rows: repeat(5, 1fr); 
+  gap: 9px; 
 }
 
 .botones button,
-.operaciones button { /* Unifica la forma y el comportamiento de todos los botones. */
-  min-width: 0; /* Evita que los botones se salgan de sus columnas. */
-  min-height: 48px; /* Facilita pulsarlos con el dedo o el ratón. */
-  border: 1px solid #53616e; /* Define cada botón sobre el fondo oscuro. */
-  border-radius: 12px; /* Da a los botones esquinas suaves. */
-  background: #2a3946; /* Distingue los botones del fondo de la tarjeta. */
-  color: #f7f9fc; /* Mantiene los símbolos claramente visibles. */
-  cursor: pointer; /* Indica que cada botón se puede pulsar. */
-  font: inherit; /* Mantiene la tipografía coherente. */
-  font-size: 18px; /* Hace legibles los números y símbolos. */
-  font-weight: 600; /* Refuerza la lectura de los controles. */
-  transition: background-color 150ms ease, transform 150ms ease; /* Suaviza las respuestas visuales al interactuar. */
+.operaciones button { 
+  min-width: 0; 
+  min-height: 48px; 
+  border: 1px solid #53616e; 
+  border-radius: 12px; 
+  background: #2a3946; 
+  color: #f7f9fc; 
+  cursor: pointer; 
+  font: inherit; 
+  font-size: 18px; 
+  font-weight: 600; 
+  transition: background-color 150ms ease, transform 150ms ease; 
 }
 
 .botones button:hover,
-.operaciones button:hover { /* Da una respuesta visual al pasar por encima de un botón. */
-  background: #3a4c5b; /* Aclara el botón bajo el puntero. */
+.operaciones button:hover { 
+  background: #3a4c5b; 
 }
 
 .botones button:active,
-.operaciones button:active { /* Da sensación de pulsación al activar un botón. */
-  transform: scale(0.96); /* Reduce ligeramente el botón mientras se pulsa. */
+.operaciones button:active { 
+  transform: scale(0.96); 
 }
 
 .botones button:focus-visible,
-.operaciones button:focus-visible { /* Hace visible el foco para navegación con teclado. */
-  outline: 3px solid #72d6ad; /* Resalta el botón enfocado con el color de acento. */
-  outline-offset: 2px; /* Separa el foco del contorno del botón. */
+.operaciones button:focus-visible { 
+  outline: 3px solid #72d6ad; 
+  outline-offset: 2px; 
 }
 
-.operaciones button:last-child { /* Destaca el botón que muestra el resultado. */
-  border-color: #72d6ad; /* Enmarca el botón igual con el color de acento. */
-  background: #72d6ad; /* Diferencia el botón igual del resto de operaciones. */
-  color: #17212b; /* Mantiene el símbolo igual legible sobre el fondo claro. */
+.operaciones button:last-child { 
+  border-color: #72d6ad; 
+  background: #72d6ad; 
+  color: #17212b; 
 }
 
-.operaciones button:last-child:hover { /* Mantiene una respuesta visual clara en el botón igual. */
-  background: #8be2bd; /* Aclara el botón igual al pasar por encima. */
+.operaciones button:last-child:hover { 
+  background: #8be2bd; 
 }
 
-@media (max-width: 380px) { /* Ajusta los espacios en pantallas especialmente estrechas. */
-  .calculadora { /* Reduce el relleno de la tarjeta en móviles pequeños. */
-    padding: 20px; /* Evita comprimir demasiado los botones en pantallas estrechas. */
+@media (max-width: 380px) { 
+  .calculadora { 
+    padding: 20px; 
   }
 
-  .controles { /* Reduce el ancho reservado a las operaciones en móviles pequeños. */
-    grid-template-columns: minmax(0, 1fr) 56px; /* Da más espacio al teclado numérico. */
-    gap: 8px; /* Mantiene una separación compacta entre las dos columnas. */
+  .controles { 
+    grid-template-columns: minmax(0, 1fr) 56px; 
+    gap: 8px; 
   }
 
   .botones,
-  .operaciones { /* Compacta el espacio entre todos los botones en móvil. */
-    gap: 7px; /* Mantiene la cuadrícula ordenada con menos ancho disponible. */
+  .operaciones { 
+    gap: 7px; 
   }
 }
