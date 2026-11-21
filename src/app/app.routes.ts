@@ -8,6 +8,7 @@ import { Menu } from './components/menu/menu';
 import{Formulariohalloween}from './components/formulariohalloween/formulariohalloween'; 
 import { Padre } from './components/padre/padre';
 import { Clicker } from './components/clicker/clicker';
+import { Cronometro } from './components/cronometro/cronometro';
 
 
 export const routes: Routes = [
@@ -20,4 +21,5 @@ export const routes: Routes = [
   { path: 'Padre', component: Padre },
   {path: 'formulariohalloween', component: Formulariohalloween},
   { path: 'Clicker', component: Clicker},
+  { path: 'cronometro', component: Cronometro },
 ];
