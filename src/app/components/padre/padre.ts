@@ -7,4 +7,5 @@ import { Hijo } from '../hijo/hijo';
   styleUrl: './padre.css',
   templateUrl: './padre.html',
 })
+// Componente contenedor que usa su plantilla para mostrar el componente Hijo.
 export class Padre {}

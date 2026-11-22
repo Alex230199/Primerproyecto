@@ -8,6 +8,7 @@ import {Injectable, signal} from '@angular/core';
 export class TemaService {
     modoOscuro = signal(false);
 
+    /** Alterna entre tema claro y oscuro y actualiza la clase aplicada al documento. */
     cambiarTema(): void{
 
         this.modoOscuro.update(oscuro => !oscuro);

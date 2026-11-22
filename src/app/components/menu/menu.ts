@@ -15,6 +15,7 @@ import {TemaService} from '../../services/tema';
 
 
 export class Menu {
+  // Inyecta el servicio y lo expone como propiedad pública del componente.
   constructor(public temaService: TemaService) {}
 }
 

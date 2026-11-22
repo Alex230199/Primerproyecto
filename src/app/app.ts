@@ -14,5 +14,6 @@ import { Menu } from './components/menu/menu';
   templateUrl: './app.html',
 })
 export class App {
+  // Crea una señal protegida y de solo lectura con el título visible de la aplicación.
   protected readonly title = signal('Primerproyecto');
 }
