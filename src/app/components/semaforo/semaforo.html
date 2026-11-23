@@ -2,20 +2,17 @@
     @for (semaforo of [1, 2, 3, 4, 5]; track semaforo) {
        <div class="semaforo">
           <div class="luz rojo"
-              [style.background-color]="obtenerColorLuz('rojo')"
-              [style.border-color]="obtenerColorBordeLuz('rojo')"></div>
+              [style.background-color]="obtenerColorLuz('rojo')"></div>
           <div class="luz amarillo"
-              [style.background-color]="obtenerColorLuz('amarillo')"
-              [style.border-color]="obtenerColorBordeLuz('amarillo')"></div>
+              [style.background-color]="obtenerColorLuz('amarillo')"></div>
           <div class="luz verde"
-              [style.background-color]="obtenerColorLuz('verde')"
-              [style.border-color]="obtenerColorBordeLuz('verde')"></div>
+              [style.background-color]="obtenerColorLuz('verde')"></div>
        </div>
     }
 </div>
 <div style="display: flex; flex-direction: row; justify-content: center; gap: 1rem; margin-top: 1rem;">
  
-    <h1 class="contador" [style.color]="obtenerColorContador()">
+    <h1 class="contador" style="color: green">
         Contador: {{ contador() }}
     </h1>
  
