@@ -1,3 +1,6 @@
+// Este componenete se ha realizado enteramente con IA.
+//  No se trata de un ejercicio que se pusiera en clase,
+//  pero quedó como prueba.
 import { ComponentFixture, TestBed } from '@angular/core/testing'; 
 import { Hermingo } from './hermingo'; 
 

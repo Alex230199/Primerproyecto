@@ -1,5 +1,8 @@
 import { Component } from '@angular/core'; 
 
+// Este componenete se ha realizado enteramente con IA.
+//  No se trata de un ejercicio que se pusiera en clase,
+//  pero quedó como prueba.
 @Component({ 
   imports: [], 
   selector: 'app-hermingo', 
