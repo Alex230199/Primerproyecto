@@ -4,7 +4,7 @@
 
 	@if (imagenNoDisponible) {
 
-		<p class="error-imagen">No se pudo cargar la imagen. Comprueba que el enlace sea directo y público.</p>
+		<p class="error-imagen">No se pudo cargar la imagen. Comprueba otro enlace.</p>
 	}
 
 	<div class="datos-objeto">
@@ -15,7 +15,7 @@
 
 		<p class="propietario">Propietario: {{ objeto.propietario }}</p>
 
-		<button class="boton-eliminar" type="button" (click)="Eliminacion()">Eliminar</button>
+		<button class="boton-eliminar" type="button" (click)="eliminarObjeto()">Eliminar</button>
 
 	</div>
 	

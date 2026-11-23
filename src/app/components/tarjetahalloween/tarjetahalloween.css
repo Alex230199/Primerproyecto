@@ -20,29 +20,18 @@
 	object-fit: cover;
 }
 
-.tarjeta { 
-  background-color: var(--superficie);
-  color: var(--texto);
-}
-
 .error-imagen {
 	max-width: 8rem;
 	color: #b42318;
 	font-size: 0.875rem;
 }
 
-.datos-objeto {
-	flex: 1;
-}
 
 .datos-objeto h3 {
 	margin: 0 0 0.5rem;
 	color: #3b214f;
 }
 
-.datos-objeto p {
-	margin: 0 0 0.75rem;
-}
 
 .propietario {
 	font-weight: 600;
